@@ -15,4 +15,8 @@ export class AppComponent {
     Swal.fire("Oops","An error occured.","error")
 
   }
+
+  onWarning(){
+    Swal.fire("Warning", "be aware !", "warning")
+  }
 }
