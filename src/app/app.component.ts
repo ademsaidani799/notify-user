@@ -27,6 +27,9 @@ export class AppComponent {
     confirmButtonText: 'Delete',
     denyButtonText: `Don't Delete`}).then((res)=>{
       console.log(res)
+      if(res.isConfirmed){
+        Swal.fire("Deleted");
+      }
     })
 
   }
