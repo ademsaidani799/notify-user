@@ -19,4 +19,15 @@ export class AppComponent {
   onWarning(){
     Swal.fire("Warning", "be aware !", "warning")
   }
+
+  onConfirm(){
+    Swal.fire({  title: 'Are you sure?',
+    html: "If you delete this you cannot revert it? are you sure you want to delete?",
+    showDenyButton: true,
+    confirmButtonText: 'Delete',
+    denyButtonText: `Don't Delete`}).then((res)=>{
+      console.log(res)
+    })
+
+  }
 }
