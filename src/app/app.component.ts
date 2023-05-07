@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2'
 @Component({
   selector: 'app-root',
@@ -7,6 +8,8 @@ import Swal from 'sweetalert2'
 })
 export class AppComponent {
   title = 'NotifyUser';
+
+  constructor(private toastrService:ToastrService){}
   onSuccess(){
     Swal.fire("Awesome","you have completed the course.","success")
 
@@ -31,6 +34,16 @@ export class AppComponent {
         Swal.fire("Deleted");
       }
     })
+
+  }
+
+  onToastrSuccess(){
+     
+
+    this.toastrService.success("you succeeded")
+  }
+  onToastrError(){
+    this.toastrService.error("better luck next time")
 
   }
 }
